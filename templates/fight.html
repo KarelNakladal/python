@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} {% endblock %}
+
+{% block page %}
+    player's weapon:{{player[1]}}<br>
+    player is good against:{{player[2]}}
+    <br>
+    bots weapon:{{bot[1]}}<br>
+    bot is good againts:{{bot[2]}}
+    <br>
+    <br>
+    {% if bot[2] == player[1] %}
+        prohrál jsi
+    {% elif bot[1] == player[2] %}
+        vyhrál jsi
+    {% else %}
+        remíza
+    {% endif %}
+{% endblock %}

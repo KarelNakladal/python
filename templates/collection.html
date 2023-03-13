@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} {% endblock %}
+
+{% block page %}
+
+    {% for weapon in weapons %}
+        <div>
+
+            <strong>Jméno: {{weapon[1]}} </strong>
+            <br>
+            Dobré proti: {{weapon[2]}}
+            <form method="post">
+                <input type="hidden" name="id" value="{{request.form[id]}} {{weapon[0]}}">
+                <button type="submit">{{weapon[1]}}</button>
+            </form>
+
+        </div>
+    {% endfor %}
+
+{% endblock %}
